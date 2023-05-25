@@ -2389,8 +2389,8 @@
 
 {% comment %} start add popup {% endcomment %}
 
- <style>
-   /* Styling for the modal */
+<style>
+   /* Common styles for both desktop and mobile */
    .modal1 {
      display: none;
      position: fixed;
@@ -2401,17 +2401,15 @@
      height: 100%;
      overflow: auto;
      background-color: rgba(0, 0, 0, 0.4);
-     backdrop-filter: blur(8px); /* Apply background blur */
+     backdrop-filter: blur(8px);
    }
-   
-   /* Styling for the modal content */
+ 
    .modal-content1 {
      text-align: center;
      position: relative;
      background-color: transparent;
    }
-   
-   /* Styling for the modal image */
+ 
    .modal-image1 {
      max-width: 41%;
      height: auto;
@@ -2420,27 +2418,48 @@
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
      background-color: #fefefe;
    }
-   
-   /* Styling for the close button */
+ 
    .close-button {
      position: absolute;
      top: 10px;
      right: 10px;
      font-size: 24px;
-     color: #fff; /* Set the close button color to white */
+     color: #000;
      cursor: pointer;
      background: none;
      border: none;
    }
-   
-   /* Styling for the close button on hover */
+ 
    .close-button:hover {
-     color: #ccc; /* Change close button color on hover */
+     color: #ccc;
    }
-   
-   /* Styling to block scrolling */
+ 
    body.modal-open {
      overflow: hidden;
+   }
+ 
+   /* Mobile-specific styles */
+   @media (max-width: 767px) {
+     .modal-image1 {
+       max-width: 94%;
+       margin: 74% auto;
+     }
+ 
+     .close-button {
+       top: 359px;
+       right: 5px;
+       font-size: 20px;
+       color: #fff;
+       background-color: rgba(0, 0, 0, 0.8);
+       padding: 5px;
+       border-radius: 50%;
+       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+     }
+ 
+     .close-button:hover {
+       background-color: rgba(0, 0, 0, 0.9);
+       color: #fff;
+     }
    }
  </style>
  
@@ -2449,30 +2468,30 @@
    function showModal() {
      var modal = document.getElementById("myModal");
      modal.style.display = "block";
-     
+ 
      // Add the modal-open class to the body element
      document.body.classList.add("modal-open");
-     
+ 
      // Scroll the page to the top
      window.scrollTo(0, 0);
    }
-   
+ 
    // Function to close the modal popup
    function closeModal() {
      var modal = document.getElementById("myModal");
      modal.style.display = "none";
-     
+ 
      // Remove the modal-open class from the body element
      document.body.classList.remove("modal-open");
    }
-   
+ 
    // Function to show the modal after a delay
    function showDelayedModal() {
      setTimeout(function() {
        showModal();
      }, 5000); // 5000 milliseconds = 5 seconds
    }
-   
+ 
    // Call the showDelayedModal function when the page loads
    window.onload = showDelayedModal;
  </script>
