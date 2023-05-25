@@ -1295,41 +1295,43 @@
 
 <h2>Estimated Amout:</h2>
 <p id="result"></p>
+<p id="message" style="display: none;">Talk to our experts (call on- <a href="tel:+91 9743333669">+91 9743333669</a> ) <br> <a href="contactus">click me to call back</a></p>
 
 <script>
-  function calculate() {
-    var rate = parseFloat(document.getElementById('rate').value);
-    var length = parseFloat(document.getElementById('length').value);
-    var width = parseFloat(document.getElementById('width').value);
-    var floor = document.getElementById('floor').value;
-
-    var area = length * width;
-    var floorLabel = document.getElementById('floor').options[document.getElementById('floor').selectedIndex].text;
-
-    var result;
-    if (floor === 'G') {
-      result = area * rate;
-    } else if (floor === 'G+1') {
-      result = area * rate * 2;
-    } else if (floor === 'G+2') {
-      result = area * rate * 3;
-    } else if (floor === 'G+3') {
-      result = area * rate * 4;
-    } else if (floor === 'G+4') {
-      result = area * rate * 5;
-    } else if (floor === 'G+5') {
-      result = area * rate * 6;
-    }
-
-    document.getElementById('result').textContent = 'Total cost for ' + floorLabel + ': ₹' + result;
-  }
-
-  // Prevent form submission from refreshing the page
-  var form = document.querySelector('form');
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-  });
-</script>
+   function calculate() {
+     var rate = parseFloat(document.getElementById('rate').value);
+     var length = parseFloat(document.getElementById('length').value);
+     var width = parseFloat(document.getElementById('width').value);
+     var floor = document.getElementById('floor').value;
+ 
+     var area = length * width;
+     var floorLabel = document.getElementById('floor').options[document.getElementById('floor').selectedIndex].text;
+ 
+     var result;
+     if (floor === 'G') {
+       result = area * rate;
+     } else if (floor === 'G+1') {
+       result = area * rate * 2;
+     } else if (floor === 'G+2') {
+       result = area * rate * 3;
+     } else if (floor === 'G+3') {
+       result = area * rate * 4;
+     } else if (floor === 'G+4') {
+       result = area * rate * 5;
+     } else if (floor === 'G+5') {
+       result = area * rate * 6;
+     }
+ 
+     document.getElementById('result').textContent = 'Total cost for ' + floorLabel + ': ₹' + result;
+     document.getElementById('message').style.display = 'block';
+   }
+ 
+   // Prevent form submission from refreshing the page
+   var form = document.querySelector('form');
+   form.addEventListener('submit', function (event) {
+     event.preventDefault();
+   });
+ </script>
 
                   
                 </div>
