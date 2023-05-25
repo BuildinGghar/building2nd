@@ -1,0 +1,2819 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="form-back-drop"></div>
+<section class="hidden-bar">
+   <div class="inner-box">
+      <div class="cross-icon"><span class="fa fa-times"></span></div>
+      <div class="title">
+         <h2>Get Appointment</h2>
+      </div>
+      <div class="appointment-form">
+         <div>
+            <div class="form-group">
+               <input type="text" name="text" value placeholder="Name">
+            </div>
+            <div class="form-group">
+               <input type="email" name="email" value placeholder="Email Address">
+            </div>
+            <div class="form-group">
+               <input type="text" name="phone" value placeholder="Phone no.">
+            </div>
+            <div class="form-group">
+               <textarea placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+               <button type="submit" class="theme-btn btn-style-three">Submit now</button>
+            </div>
+         </div>
+      </div>
+      <div class="contact-info-box">
+         <ul class="info-list">
+            <li><i class="fa fa-phone-volume"></i><a href="tel:+91 000000000">+91 000000000</a></li>
+            <li><i class="fa fa-envelope"></i><a href="cdn-cgi/l/email-protection.html#364f594344765b575f5a1855595b"><span class="__cf_email__" data-cfemail="c1b8aeb4b381aca0a8adefa2aeac">[email&#160;protected]</span></a></li>
+         </ul>
+         <ul class="social-list clearfix">
+            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            <li><a href="#"><i class="fab fa-skype"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="hidden-bar">
+    <div class="inner-box">
+       <div class="cross-icon"><span class="fa fa-times"></span></div>
+       <div class="title">
+          <h2>Get Appointment</h2>
+       </div>
+       <div class="appointment-form">
+          <div>
+             <div class="form-group">
+                <input type="text" name="text" placeholder="Name">
+             </div>
+             <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address">
+             </div>
+             <div class="form-group">
+                <input type="text" name="phone" placeholder="Phone no.">
+             </div>
+             <div class="form-group">
+                <textarea placeholder="Message"></textarea>
+             </div>
+             <div class="form-group">
+                <button type="submit" class="theme-btn btn-style-three">Submit now</button>
+             </div>
+          </div>
+       </div>
+       <div class="contact-info-box">
+          <ul class="info-list">
+             <li><a href="cdn-cgi/l/email-protection.html#c6a3bea7abb6aaa386a1aba7afaae8a5a9ab"><span class="__cf_email__" data-cfemail="53362b323e233f3613343e323a3f7d303c3e">[email&#160;protected]</span></a></li>
+             <li><a href="tel:+(123)4567890">+(123) 456 7890</a></li>
+          </ul>
+          <ul class="social-list clearfix">
+             <li><a href="#">Facebook</a></li>
+             <li><a href="#">Linkedin</a></li>
+             <li><a href="#">Twitter</a></li>
+             <li><a href="#">Google +</a></li>
+             <li><a href="#">Instagram</a></li>
+          </ul>
+       </div>
+    </div>
+ </section>
+
+ <section class="banner banner-section hidden-xs">
+    <div class="carousel-wrap">
+       <div class="owl-carousel">
+         {% for i in baners %}
+          <div class="item">
+             <img src="{{ i.image.url }}" loading="lazy" alt="Banner Image">
+          </div>
+          {% endfor %}
+       </div>   
+    </div>   
+ </section>
+ 
+ <section class="banner banner-section visible-xs">
+   <div class="carousel-wrap">
+      <div class="owl-carousel">
+        {% for i in baners %}
+         <div class="item">
+           
+            <img src="{{ i.image.url }}" loading="lazy" alt="Banner Image">
+            
+         </div>
+         {% endfor %}
+      </div>
+      
+   </div>
+</section>
+ <div class="container">
+    <div class="row">
+       <div class="col-md-9"></div>
+       <div class="col-md-3" id="enquiryfrm">
+          <div class="enquiry-form">
+             <div class="form-column">
+                {% comment %} <div class="content-box">
+                   <div class="title-box">
+                      <h2>Quick Enquiry</h2>
+                   </div>
+                   <div class="banner-form">
+                      <div id="banner-form">
+                         <div class="row clearfix">
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <input type="text" class="txtHE_Name reqClass" id="txtHE_Name" placeholder="Name" />
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <input type="text" class="txtHE_Mob reqClass" id="txtHE_Mob" onkeypress="if (!window.__cfRLUnblockHandlers) return false; return isNumber(event)" placeholder="Mobile no." data-cf-modified-a7d529662f03487d1bc85075- />
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <input type="email" class="txtHE_Email emailValidation reqClass" placeholder="Email" />
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <select name="ctl00$ContentPlaceHolder1$ddlHECity" id="ContentPlaceHolder1_ddlHECity" class="form-control reqClass ddlHECity">
+                                  <option value>Select your city</option>
+                                  <option value="Bangalore">Bangalore</option>
+                                  <option value="Chennai">Chennai</option>
+                                  <option value="Hyderabad">Hyderabad</option>
+                               </select>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <input type="text" class="txtHE_Pin reqClass" id="txtHE_Pin" placeholder="Pincode" />
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <span class="spanHE_Status"></span>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <button class="theme-btn btn-style-one banner-btn HE_Submit" type="submit" name="submit-form">Submit Now</button>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                               <p class="terms">By submitting this form, you agree to the <a href="#" target="_blank" class="term-condition-link">privacy policy</a> and <a href="termsandconditions.html" target="_blank" class="term-condition-link">terms of use </a></p>
+                            </div>
+                         </div>
+                      </div> {% endcomment %}
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+ <section class="services-section our-expertise form-mrtp" style="padding: 50px 0px;" id="who-we-are">
+    <div class="container">
+       <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+          <h2 class="text-center">Our Expertise</h2>
+       </div>
+       <div class="services-box row clearfix">
+          <div class="col-md-3">
+             <div class="flip-card">
+                <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                      <div class="service-block">
+                         <a href="javascript:void(0);"></a>
+                         <div class="inner-box">
+                            <a href="javascript:void(0);">
+                               <div class="icon-img">
+                                  <div class="showhim1">
+                                     <div class="showme1">
+                                        <center> <img src="{% static 'img/icons/expertise/home%20construction.svg' %}" class="img-responsive" alt="home icons"></center>
+                                     </div>
+                                     <div class="ok1">
+                                        <center> <img src="{% static 'img/icons/expertise/home%20construction.svg' %}" alt="constrcution icons" class="img-responsive wow bounceIn animated" style="visibility: visible;"></center>
+                                     </div>
+                                  </div>
+                               </div>
+                            </a>
+                            <div class="lower-content">
+                               <a href="#"></a>
+                               <h3><a href="#"></a><a href="index.html">HOME CONSTRUCTION</a></h3>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="flip-card-back">
+                      <p>Independent House/Villa Constructions with High standards and Quality material.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-3">
+             <div class="flip-card">
+                <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                      <div class="service-block">
+                         <a href="architecture-2.html"></a>
+                         <div class="inner-box">
+                            <a href="architecture-2.html">
+                               <div class="icon-img">
+                                  <div class="showhim1">
+                                     <div class="showme1">
+                                        <center><img src="{% static 'img/icons/expertise/architecture.svg' %}" alt="architecture" class="img-responsive"></center>
+                                     </div>
+                                     <div class="ok1">
+                                        <center> <img src="{% static 'img/icons/expertise/architecture.svg' %}" alt="architecture" class="img-responsive wow bounceIn   animated" style="visibility: visible;"></center>
+                                     </div>
+                                  </div>
+                               </div>
+                            </a>
+                            <div class="lower-content">
+                               <a href="architecture-2.html"></a>
+                               <h3><a href="architecture-2.html"></a><a href="architecture-2.html">ARCHITECTURE & STRUCTURAL DESIGN</a></h3>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="flip-card-back">
+                      <a href="architecture-2.html">Best in class Architecture includes Floor plans, 3D Elevations and Structural drawings.</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-3">
+             <div class="flip-card">
+                <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                      <div class="service-block">
+                         <a href="interiors.html"></a>
+                         <div class="inner-box">
+                            <a href="interiors.html">
+                               <div class="icon-img">
+                                  <div class="showhim1">
+                                     <div class="showme1">
+                                        <center> <img src="{% static 'img/icons/expertise/interiors.svg' %}" class="img-responsive" alt="interior icons"></center>
+                                     </div>
+                                     <div class="ok1">
+                                        <center><img src="{% static 'img/icons/expertise/interiors.svg' %}" alt="interiors" class="img-responsive wow bounceIn animated" style="visibility: visible;"></center>
+                                     </div>
+                                  </div>
+                               </div>
+                            </a>
+                            <div class="lower-content">
+                               <a href="interiors.html"></a>
+                               <h3><a href="interiors.html"></a><a href="interiors.html">INTERIOR<br/>
+                                  DESIGNING</a>
+                               </h3>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="flip-card-back">
+                      <a href="interiors.html">Best in class Interior designs and Great Value.</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-3">
+             <div class="flip-card">
+                <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                      <div class="service-block">
+                         <a href="javascript:void(0);"></a>
+                         <div class="inner-box">
+                            <a href="javascript:void(0);">
+                               <div class="icon-img">
+                                  <div class="showhim1">
+                                     <div class="showme1">
+                                        <center><img src="{% static 'img/icons/expertise/management.svg' %}" alt="management" class="img-responsive"></center>
+                                     </div>
+                                     <div class="ok1">
+                                        <center> <img src="{% static 'img/icons/expertise/management.svg' %}" alt="management" class="img-responsive wow bounceIn   animated" style="visibility: visible;"></center>
+                                     </div>
+                                  </div>
+                               </div>
+                            </a>
+                            <div class="lower-content">
+                               <a href="#"></a>
+                               <h3><a href="#"></a><a href="#">PLANNING & MANAGEMENT</a></h3>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="flip-card-back">
+                      <a href="#">A good construction plan is the basis for developing the budget and the schedule for work.</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <section class="project-section custom-tabs construction-tabs" style="background: url("{% static 'img/bg-texture.jpg' %}"); background-size: cover; padding: 50px 0px; background-attachment: fixed; background-position: center;">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="container">
+             <div class="row">
+                <div class="col-12">
+                   <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+                      <h2 class="text-center" style="color: #000">Exclusive Packages</h2>
+                   </div>
+                </div>
+                <div class="col-md-12">
+                   <div class="tab-btns-box tab-center pull-center">
+                      <div class="tabs-header marginb0">
+                         <ul class="product-tab-btns clearfix">
+                            <li class="p-tab-btn mlb0 active-btn mlb0 bdrd p-tab-btn1" data-tab="#p-tab-1" style="margin-left: -4px !important;"><i class="fa fa-home"></i>&nbsp; Turn-key Construction Packages </li>
+                            <li class="p-tab-btn mlb0" data-tab="#p-tab-2"><i class="fa fa-home"></i>&nbsp; Architecture Packages </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                   <div class="project-tab" style="background-color: transparent">
+                      <div class="p-tabs-content" style="margin: 0px -10px;">
+                         <div class="p-tab int-des" id="p-tab-2">
+                            <div class="price-section style-two" style="padding-top: 0px; padding-bottom: 0px">
+                               <div class="row pack archi">
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>BASIC </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.25/sft+GST</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/silver.jpg' %}" class="img-responsive" alt="silver" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; 2D Floor Plan: 2 Options</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       2D Elevation: 1 Option
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       3D Elevation: 1 Option
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Structural Design
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Working Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Vasthu Compliant
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>BUDGET </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.35/sft+GST</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/gold.jpg' %}" class="img-responsive" alt="Gold" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; 2D Floor Plans: 4 Options</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       2D Elevation: 2 Options
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       3D Elevation: 2 Options
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Structural Design
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Electrical & Plumbing Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Working Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Vasthu Compliant
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>STANDARD </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.45/sft+GST</b> </span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/diamond.jpg' %}" class="img-responsive" alt="Diamond" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; 2D Floor Plans: 6 Options</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       2D Elevation: 3 Options
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       3D Elevation: 3 Options
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Furniture Layout
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Structural Design
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Electrical & Plumbing Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Working Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Vasthu Compliant
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>PREMIUM</h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.65/Sft+GST</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/platinum.jpg' %}" class="img-responsive" alt="platinum" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; 2D Floor Plans: Until Satisfied </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       2D Elevation: Until Satisfied
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       3D Elevation: Until Satisfied
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Furniture Layout
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Structural Design
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Electrical & Plumbing Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Working Drawings
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Interior Design
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Vasthu Compliant
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="p-tab int-des" id="p-tab-3">
+                            <div class="price-section style-two" style="padding-top: 0px; padding-bottom: 0px">
+                               <div class="row pack shell">
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Silver </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1172/sft</b><sup>*</sup></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/silver.jpg' %}" class="img-responsive" alt="silver" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Standard Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Sub-structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Super Structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Internal Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       External Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="shell-construction-silver-packages.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Gold </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1242/sft</b><sup>*</sup></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/gold.jpg' %}" class="img-responsive" alt="Gold" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Classic Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Sub-structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Super Structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Internal Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       External Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="shell-construction-gold-packages.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Diamond </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1362/sft</b><sup>*</sup> </span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/diamond.jpg' %}" class="img-responsive" alt="Diamond" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Elegant elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Sub-structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Super Structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Internal Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       External Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="shell-construction-diamond-packages.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Platinum</h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1422/sft</b><sup>*</sup></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/platinum.jpg' %}" class="img-responsive" alt="platinum" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural, Electrical and Plumbing </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Contemporary Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Sub-structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Super Structure
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Internal Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       External Plastering
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="shell-construction-platinum-packages.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="p-tab active-tab" id="p-tab-1">
+                            <div class="price-section style-two" style="padding-top: 0px; padding-bottom: 0px">
+                               <div class="row pack">
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Silver </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1579/sft</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/silver.jpg' %}" class="img-responsive" alt="silver" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Standard Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Vitrified Tiles Flooring
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Modern Bathroom and Kitchen</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in text-left">
+                                                 <p class="package-lh"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Main door</p>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="silver.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Gold </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1749/sft</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/gold.jpg' %}" class="img-responsive" alt="Gold" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Classic Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Premium Vitrified Tiles Flooring </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Modern Bathroom and Kitchen</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in text-left">
+                                                 <p class="package-lh"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Teak main door</p>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="gold.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Diamond </h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.1979/sft</b> </span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/diamond.jpg' %}" class="img-responsive" alt="Diamond" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural</p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Elegant elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Granite Flooring
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Premium Bathroom and Kitchen
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in text-left">
+                                                 <p class="package-lh"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Premium Teak</p>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="diamond.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                     <div class="package-box">
+                                        <div class="package-box-heading">
+                                           <div class="row">
+                                              <div class="col-md-12 text-center">
+                                                 <h4>Platinum</h4>
+                                              </div>
+                                              <div class="col-md-12 text-center">
+                                                 <div class="price">
+                                                    <span><b>Rs.2149/sft</b></span>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                        <div class="package-image">
+                                           <img src="{% static 'images/platinum.jpg' %}" class="img-responsive" alt="platinum" />
+                                        </div>
+                                        <div class="package-detail">
+                                           <h5>Package Includes</h5>
+                                           <div class="package-list package-list1 text-left">
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Floor plans + Structural, Electrical and Plumbing </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Contemporary Elevation
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Premium Granite Flooring
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in">
+                                                 <div class="package-lh">
+                                                    <p>
+                                                       <i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+                                                       Premium Bathroom and Kitchen
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                              <div class="list-in text-left">
+                                                 <p class="package-lh"><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Burma Teak</p>
+                                              </div>
+                                           </div>
+                                           <div class="package-footer">
+                                              <a class="purchased package-footer-btn btn-style-one" href="platinum.html">View More</a>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+{% comment %} calculator area {% endcomment %}
+ <section class="faq-section" style="background: #fff; padding: 50px 0px;">
+    <div class="container">
+       <div class="row clearfix">
+          <div class="col-md-12 why-choose">
+             <div class="row">
+                <div class="col-md-12">
+                   <div class="sec-title text-center wow zoomIn text-center" style="visibility: visible; animation-name: zoomIn;">
+                      <h2 class="text-center" style="margin-bottom: 15px;">Looking for Customized Package?</h2>
+                      <p style="font-weight: 600; font-size: 18px;">You can also have Customized package</p>
+                      <small style="font-size: 14px;">Please submit the following form and we will get back to you with the best quotation</small>
+                   </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                   <div class="custom-package custompackage_step1">
+                      <div class="cpackage-heading">
+                         <h4>Step 1: Site </h4>
+                      </div>
+                      <div class="cpackage-body">
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Site Area</div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7 widthxs">
+                               <input name="ctl00$ContentPlaceHolder1$txtSiteArea" type="text" id="ContentPlaceHolder1_txtSiteArea" class="form-control txtSiteArea" placeholder="1200" />
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 widthxs1">Sq.ft</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Plot Location</div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <input name="ctl00$ContentPlaceHolder1$txtPlotLocation" type="text" id="ContentPlaceHolder1_txtPlotLocation" class="form-control txtPlotLocation" placeholder="Plot Location" />
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Construction </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlConstruction" id="ContentPlaceHolder1_ddlConstruction" class="form-control ddlConstruction">
+                                  <option value="Residential construction ">Residential construction </option>
+                                  <option value="Commercial construction  ">Commercial construction </option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Interior fit-outs </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlInterior" id="ContentPlaceHolder1_ddlInterior" class="form-control ddlInterior">
+                                  <option value="Construction + interiors">Construction + interiors</option>
+                                  <option value="Only construction">Only construction</option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Design, Planning & execution</div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlDesign" id="ContentPlaceHolder1_ddlDesign" class="form-control ddlDesign">
+                                  <option value="Design &amp; Execution ">Design &amp; Execution </option>
+                                  <option value="Only design">Only design</option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">House Type </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlHouseType" id="ContentPlaceHolder1_ddlHouseType" class="form-control ddlHouseType">
+                                  <option value="Ground floor   ">Ground floor </option>
+                                  <option value="Duplex House">Duplex House</option>
+                                  <option value="Rental House">Rental House</option>
+                                  <option value="Duplex + Rental House">Duplex + Rental House</option>
+                                  <option value="Modern Villa">Modern Villa</option>
+                                  <option value="Luxury homes">Luxury homes</option>
+                                  <option value="House for self use ">House for self use </option>
+                                  <option value="House for Renting out ">House for Renting out </option>
+                                  <option value="Budget independent House">Budget independent House</option>
+                                  <option value="Bungalow">Bungalow</option>
+                                  <option value="Commercial building">Commercial building</option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Floors</div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlFloors" id="ContentPlaceHolder1_ddlFloors" class="form-control ddlFloors">
+                                  <option value="Only Ground floor ">Only Ground floor </option>
+                                  <option value="G+1 floor  ">G+1 floor </option>
+                                  <option value="G+2 floor">G+2 floor</option>
+                                  <option value="G+3 floor ">G+3 floor </option>
+                                  <option value="G+4 floor ">G+4 floor </option>
+                                  <option value="G+5 floor ">G+5 floor </option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">BHK</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                               <div class="house-type-list">
+                                  <ul class="ulBHK">
+                                     <li>1 BHK</li>
+                                     <li>2 BHK</li>
+                                     <li class="active">3 BHK</li>
+                                     <li>4 BHK</li>
+                                     <li>5 BHK</li>
+                                     <li>5+BHK</li>
+                                     <li>Office space</li>
+                                     <li>Shop </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Budget Estimate</div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <input name="ctl00$ContentPlaceHolder1$txtBudget" type="text" id="ContentPlaceHolder1_txtBudget" class="form-control txtBudget" placeholder="100000" />
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">Home loan </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                               <select name="ctl00$ContentPlaceHolder1$ddlHomeLoan" id="ContentPlaceHolder1_ddlHomeLoan" class="form-control ddlHomeLoan">
+                                  <option value="Yes Applied ">Yes Applied </option>
+                                  <option value="It’s approved ">It’s approved </option>
+                                  <option value="Need to apply">Need to apply</option>
+                               </select>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                               <div class="txt-name">When are planning for construction </div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                               <div class="house-type-list">
+                                  <ul class="ulPlanning">
+                                     <li>Immediate</li>
+                                     <li class="active">After one week</li>
+                                     <li>After one month</li>
+                                     <li>Within six months </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12">
+                               <a class="login-btn pull-right custompackage_step1_next">Next</a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="custom-package custompackage_step2" style="display: none;">
+                      <div class="cpackage-heading">
+                         <h4>Step 2: Material specification and brands</h4>
+                      </div>
+                      <div class="cpackage-body">
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Structure</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulStructure">
+                                     <li class="active" li-data="Cement Blocks (6 Inch)">Cement Blocks (6')</li>
+                                     <li li-data="Cement Blocks (8 Inch)">Cement Blocks (8')</li>
+                                     <li li-data="Red Brick">Red Brick </li>
+                                     <li li-data="Red Brick">Wire cut Red Brick </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Flooring</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulFlooring">
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Italian marble flooring</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Granite flooring</label>
+                                        </div>
+                                     </li>
+                                     <li class="active">
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Wooden flooring</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Vitrified Tiles flooring</label>
+                                        </div>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Electrical (wiring & switches) </div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulElectrical">
+                                     <li>Anchor Roma</li>
+                                     <li class="active">GM</li>
+                                     <li>Legrand</li>
+                                     <li>finolex </li>
+                                     <li>V-guard</li>
+                                     <li>Anchor</li>
+                                     <li>Havells</li>
+                                     <li>Others</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">DOORS</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulDOORS">
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Burma Teak wood frame and shutters</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Indian Teak wood frame shutter</label>
+                                        </div>
+                                     </li>
+                                     <li class="active">
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Sal wood door frame and membrane </label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">shutters</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Honne wood frame and shutters</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Teakwood & sal wood</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Upvc Doors</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" name="subscribe">
+                                           <label for="subscribeNews">Ms Doors</label>
+                                        </div>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">WINDOWS</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulWINDOWS">
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Teak wood frame and shutters</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Sal wood frame and shutters</label>
+                                        </div>
+                                     </li>
+                                     <li class="active">
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Honne wood frame and shutters</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Upvc Windows with safety grill</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Aluminium windows with safety grill</label>
+                                        </div>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Painting Type Basic</div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulPainting">
+                                     <li>Basic</li>
+                                     <li class="active">Standard</li>
+                                     <li>Premium</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Sanitary </div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulSanitary">
+                                     <li>Any ISI Brand </li>
+                                     <li>Hindware</li>
+                                     <li class="active">Jaquar</li>
+                                     <li>Parryware</li>
+                                     <li>Others</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                               <div class="txt-name">Plumbing Pipeing </div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulPlumbing">
+                                     <li>Any ISI Brand </li>
+                                     <li>Astral - PVC & Upvc </li>
+                                     <li class="active">Supreme - PVC & Upvc</li>
+                                     <li>Aashirvad - PVC & Upvc</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12">
+                               <a class="login-btn custompackage_step2_prev">Previous</a>
+                               <a class="login-btn pull-right custompackage_step2_next">Next</a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="custom-package custompackage_step3" style="display: none;">
+                      <div class="cpackage-heading">
+                         <h4>Step 3: Amenities</h4>
+                      </div>
+                      <div class="cpackage-body">
+                         <br/>
+                         <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="house-type-list">
+                                  <ul class="ulAmenities amenities-li">
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Landscaping</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>CCTV Surveillance</label>
+                                        </div>
+                                     </li>
+                                     <li class="active">
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Swimming pool </label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Children play area</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Terrace/ balcony gardening</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Mini gym</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Mini sports/ yoga room</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Min bar counter</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Home theater room</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Home office room</label>
+                                        </div>
+                                     </li>
+                                     <li>
+                                        <div>
+                                           <input type="checkbox" id name value>
+                                           <label for>Pet’s room</label>
+                                        </div>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12">
+                               <a class="login-btn custompackage_step3_prev">Previous</a>
+                               <a class="login-btn pull-right custompackage_step3_next">Next</a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="custom-package custompackage_step4" style="display: none;">
+                      <div class="cpackage-heading">
+                         <h4>Step 4: Personal Info</h4>
+                      </div>
+                      <div class="cpackage-body">
+                         <br/>
+                         <div class="row">
+                            <div class="col-md-8">
+                               <input name="ctl00$ContentPlaceHolder1$TextBox1" type="text" id="ContentPlaceHolder1_TextBox1" class="form-control reqClass txtC_PName" placeholder="NAME *" />
+                               <span style="color: red;" class="spanC_PName"></span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-8">
+                               <input name="ctl00$ContentPlaceHolder1$TextBox2" type="text" id="ContentPlaceHolder1_TextBox2" class="form-control reqClass txtC_PMobile" onkeypress="if (!window.__cfRLUnblockHandlers) return false; return isNumber(event)" placeholder="MOBILE *" data-cf-modified-a7d529662f03487d1bc85075- />
+                               <span style="color: red;" class="spanC_PMob"></span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-8">
+                               <input name="ctl00$ContentPlaceHolder1$TextBox3" type="text" id="ContentPlaceHolder1_TextBox3" class="form-control emailValidation reqClass txtC_PEmail" placeholder="Email *	" />
+                               <span style="color: red;" class="spanC_PEmail"></span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-8">
+                               <input name="ctl00$ContentPlaceHolder1$TextBox4" type="text" id="ContentPlaceHolder1_TextBox4" class="form-control reqClass txtC_PCity" placeholder="city  *	" />
+                               <span style="color: red;" class="spanC_PCity"></span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-8">
+                               <textarea name="ctl00$ContentPlaceHolder1$TextBox5" rows="2" cols="20" id="ContentPlaceHolder1_TextBox5" class="form-control reqClass txtC_PQueries" placeholder="QUERIES*"></textarea>
+                               <span style="color: red;" class="spanC_PQueries"></span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-12">
+                               <span style="color: red;" class="spanC_PStatus"></span>
+                            </div>
+                            <div class="col-md-12">
+                               <a class="login-btn custompackage_step4_prev">Previous</a> <a class="login-btn submitC_P" style="margin-left: 0px;"></i>SUBMIT</a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <style>
+    .inner .service-block {
+    position: relative;
+    padding: 0;
+    height: 250px;
+    box-shadow: 0px 35px 30px 0px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px !important;
+    padding: 14px !important;
+    border-radius: 10px;
+    background: #fff;
+    -webkit-transition: transform .3s cubic-bezier(0,0,.5,.99);
+    -moz-transition: transform .3s cubic-bezier(0,0,.5,.99);
+    transition: transform .3s cubic-bezier(0,0,.5,.99);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    }
+    .img-inner {
+    height: 68px;
+    }
+ </style>
+
+ 
+ <section class="services-section our-expertise form-mrtp" style="padding: 50px 0px;" id="who-we-are">
+   <div class="container">
+      <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+         <h2 class="text-center">How It Works?</h2>
+      </div>
+      <div class="services-box row clearfix">
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="javascript:void(0);"></a>
+                        <div class="inner-box">
+                           <a href="javascript:void(0);">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center> <img src="{% static 'img/icons/expertise/consultation.PNG' %}" class="img-responsive" alt="home icons"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center> <img src="{% static 'img/icons/expertise/consultation.PNG' %}" alt="constrcution icons" class="img-responsive wow bounceIn animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="#"></a>
+                              <h3><a href="#"></a><a href="index.html">Consultation</a></h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <p>Raise an enquiry or call us on +91 7415373407, our Technical expert will get in touch with you and take all your detailed requirements and provide you the estimation for your requirement.
+
+                        .</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="architecture-2.html"></a>
+                        <div class="inner-box">
+                           <a href="architecture-2.html">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center><img src="{% static 'img/icons/expertise/review_work.PNG' %}" alt="architecture" class="img-responsive"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center> <img src="{% static 'img/icons/expertise/review_work.PNG' %}" alt="architecture" class="img-responsive wow bounceIn   animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="architecture-2.html"></a>
+                              <h3><a href="architecture-2.html"></a><a href="architecture-2.html">Review our work</a></h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <a href="architecture-2.html">Visit our Projects and get to know about our work and quality, come to office, discuss, and close the deal.
+
+                        </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="interiors.html"></a>
+                        <div class="inner-box">
+                           <a href="interiors.html">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center> <img src="{% static 'img/icons/expertise/place_orde.PNG' %}" class="img-responsive" alt="interior icons"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center><img src="{% static 'img/icons/expertise/place_orde.PNG' %}" alt="interiors" class="img-responsive wow bounceIn animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="interiors.html"></a>
+                              <h3><a href="interiors.html"></a><a href="interiors.html">Place the order<br/>
+                              </a>
+                              </h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <a href="interiors.html">Find your good day and sign the transparent construction contract. It helps us to proceed further with Design.
+
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="javascript:void(0);"></a>
+                        <div class="inner-box">
+                           <a href="javascript:void(0);">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center><img src="{% static 'img/icons/expertise/design.PNG' %}" alt="management" class="img-responsive"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center> <img src="{% static 'img/icons/expertise/design.PNG' %}" alt="management" class="img-responsive wow bounceIn   animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="#"></a>
+                              <h3><a href="#"></a><a href="#">Design</a></h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <a href="#">Our experienced Architect will provide you the quality Designs and Architecture as per your requirements and inputs. Discuss and finalize the Design.
+
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="architecture-2.html"></a>
+                        <div class="inner-box">
+                           <a href="architecture-2.html">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center><img src="{% static 'img/icons/expertise/tracking.PNG' %}" alt="architecture" class="img-responsive"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center> <img src="{% static 'img/icons/expertise/tracking.PNG' %}" alt="architecture" class="img-responsive wow bounceIn   animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="architecture-2.html"></a>
+                              <h3><a href="architecture-2.html"></a><a href="architecture-2.html">Execution & Tracking
+
+         
+                                 </a></h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <a href="architecture-2.html">Project execution will be started. Our project management team will be updating you the daily work progress in the form of Photos and Videos.
+
+                        </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="flip-card">
+               <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                     <div class="service-block">
+                        <a href="interiors.html"></a>
+                        <div class="inner-box">
+                           <a href="interiors.html">
+                              <div class="icon-img">
+                                 <div class="showhim1">
+                                    <div class="showme1">
+                                       <center> <img src="{% static 'img/icons/expertise/handover.PNG' %}" class="img-responsive" alt="interior icons"></center>
+                                    </div>
+                                    <div class="ok1">
+                                       <center><img src="{% static 'img/icons/expertise/handover.PNG' %}" alt="interiors" class="img-responsive wow bounceIn animated" style="visibility: visible;"></center>
+                                    </div>
+                                 </div>
+                              </div>
+                           </a>
+                           <div class="lower-content">
+                              <a href="interiors.html"></a>
+                              <h3><a href="interiors.html"></a><a href="interiors.html">Handover</a>
+                              </h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="flip-card-back">
+                     <a href="interiors.html">We make sure the project completes on time without any hassles. You can Happily move into your Dream Home.
+
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+   </div>
+</section>
+
+ <section style="background: #fff; padding: 50px 0px;">
+    <div class="container">
+       <div class="sec-title text-center txt wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+          <h3 class="text-center">Our Recent Projects</h3>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div class="loop owl-carousel owl-theme">
+               
+               {% for i in project %}
+               <div class="item">
+                  <a href="{% url 'project_view' id=i.id %}">
+                     <div class="portfolio1">
+                        <div class="port-img">
+                           <img src="{{ i.feature_image.url }}" loading="lazy" class="img-responsive" alt="House Image" />
+                        </div>
+                        <div class="port-details">
+                           <div class="row">
+                              <div class="col-md-6 col-sm-6 col-xs-6">
+                                 <h4>{{i.project_id}}</h4>
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                 <h4>{{i.location}}</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-bottom">
+                           <h3 class="content-title">View Project Details</h3>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               {% endfor %}
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <section class="project-section" style="background: #f2f2f2; padding: 50px 0px;">
+    <div class="container">
+       <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+             <div class="sec-title text-center wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                <h2 class="text-center">The  BuildingGhar Advantage</h2>
+             </div>
+          </div>
+          <div class="col-md-offset-1 col-md-10" style="margin-top: 30px;">
+             <div class="table-responsive">
+                <table style="width: 100%;">
+                   <thead class="table-head">
+                      <tr>
+                         <th class="hidden-xs"></th>
+                         <th class="bg-clr">BuildingGhar</th>
+                         <th>TYPICAL EXPERIENCE</th>
+                      </tr>
+                   </thead>
+                   <tbody class="table-dotted-border">
+                      <tr>
+                         <td class="price-hd">PRICE</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>Best price guarantee</li>
+                               <li>No hidden costs</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Comparatively higher prices</li>
+                               <li>Price hike between first quote and final cost</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">QUALITY</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>Branded material</li>
+                               <li>320+ Quality checks</li>
+                               <li>ISO Quality standards</li>
+                               <li>In-house project management, No sub-contractors</li>
+                               <li>Quality Finishing </li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Inferior materials used to cut the costs</li>
+                               <li>No quality checks</li>
+                               <li>Poor standards</li>
+                               <li>Outsourced to Sub-contractors</li>
+                               <li>Poor finishing</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">SUB-CONTRACTORS</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>No Sub-Contractors</li>
+                               <li>In-house project management, No third-party involvement.</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>YES</li>
+                               <li>Mostly outsourced to Sub-contractors</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">TRANSPARENCY</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>Transparent at every level </li>
+                               <li>Pricing, Material specification, Process and Execution</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Limited to No transparency</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">CONVINIENCE</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>One-stop solution</li>
+                               <li>We take care from Plan approval to handover the project without any hassles</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Hassle experience to No support</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">DESIGN</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>Personalized Designs and Architecture</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Cookie-cutter designs and Architecture</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">TIMELINES </td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>On-Time Project Completion with
+                                  appropriate Timelines
+                               </li>
+                               <li>Regular updates with Project tracking </li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>Delays in project completion and unreliable timelines</li>
+                               <li>Poor communication on Project updates/delays</li>
+                            </ul>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td class="price-hd">WARRANTY</td>
+                         <td class="bg-white1">
+                            <ul>
+                               <li>5 years warranty for the service </li>
+                               <li>We provide after sales service</li>
+                            </ul>
+                         </td>
+                         <td class="bullet-black">
+                            <ul>
+                               <li>No warranty or Warranty for namesake</li>
+                               <li>No after sales service</li>
+                            </ul>
+                         </td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <div class="section-full p-t80 p-b50" style="background-image: url('{% static "images/bg-5.png" %}'); padding: 50px 0px">
+    <div class="container">
+       <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+          <h3 class="text-center">Why choose BuildingGhar?</h3>
+       </div>
+       <div class="section-content">
+          <div class="row">
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/1.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">No subcontractors</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/2.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Professional Project Management</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/3.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Unique and modern designs</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/4.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Quality</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/5.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Process</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/7.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Adherence to Timelines </h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/8.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Competitive Pricing</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/9.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">High-Quality Design</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/11.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Transparency</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/15.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Brand/Trustworthy</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/17.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Professional customer service</h4>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="mt-icon-box-wraper p-a30 center m-b30 box-shadow bg-white">
+                   <img src="{% static 'img/why-buildhood/19.png' %}" class="img-responsible" loading="lazy" alt="Alternate Text" />
+                   <div class="icon-content">
+                      <h4 class="mt-tilte text-uppercase font-weight-600 m-b20">Hassle-free service</h4>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+
+ <section class="padding bg_light services-section hidden-xs" style="padding: 50px 0px; /*background-color: #828282; *//*background-image: url('{% static "images/faqs.jpg" %}'); */ background-attachment: fixed">
+    <div class="container">
+       <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+          <h3 class="text-center" style="color: #000">Frequently Asked Questions</h3>
+       </div>
+    </div>
+    <div class="container">
+       <div class="row faq-bg clearfix">
+          <div class>
+             <div class="col-md-6">
+                <div class="accordion-container">
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/services.png' %}" width="40" class="img-responsive" alt="faq image">
+                         What are services BuildingGhar provides?
+                      </h4>
+                      <div class="content ">
+                         <p>Home/Villa/Building Turn-key construction, Interior design And House renovations.</p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/why-choose-bh.png' %}" width="40" class="img-responsive" alt="faq image">
+                         Why should you choose BuildingGhar?
+                      </h4>
+                      <div class="content">
+                         <div class="text">
+                           BuildingGhar is a fast growing brand for its quality & Trustworthy services with certified professionals.
+                            <ul>
+                               <li>• 150+ Projects Experience </li>
+                               <li>• Trustworthy, Reliable, And Secure</li>
+                               <li>• Fixed package cost with customization</li>
+                               <li>• Great Value For Money</li>
+                               <li>• Experienced Professionals & Labour</li>
+                               <li>• Dedicated Civil Engineers</li>
+                               <li>• Quality Assurance</li>
+                               <li>• Upto 10 Years Warranty</li>
+                               <li>• Verified & Quality Material</li>
+                               <li>• On-Time Completion Of Projects</li>
+                               <li>• Flexible Payment schedules</li>
+                               <li>• Transparency</li>
+                               <li>• Hassle-Free Service</li>
+                               <li>• 100% Satisfaction Guaranteed</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/design-charges.png' %}" width="40" class="img-responsive" alt="faq image">
+                         Do you charge separately for Designs?
+                      </h4>
+                      <div class="content">
+                         <p>NO, we do not charge for Designs, it is included with the package.</p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/govt-approvals.png' %}" width="40" class="img-responsive" alt="faq image">
+                         Do you help with governmental approvals?
+                      </h4>
+                      <div class="content">
+                         <p>YES, We do help our clients with all the government approvals and Temporary electric connects.</p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/on-time%20completion.png' %}" width="40" class="img-responsive" alt="faq image">
+                         How do you assure on-time completion of the project?
+                      </h4>
+                      <div class="content">
+                         <p>We will plan and define a schedule and timeline for each stage of the project which helps us to meet the target date and we closely monitor all the stages.</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-6">
+                <div class="accordion-container">
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/quality.png' %}" width="40" class="img-responsive" alt="faq image">
+                         How do you monitor the work quality?
+                      </h4>
+                      <div class="content">
+                         <p>A dedicated and experienced civil engineer will be assigned to the project and he will me monitoring the progress and Quality of the work.</p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/payment.png' %}" width="40" class="img-responsive" alt="faq image">
+                         How is BuildingGhar payment process?
+                      </h4>
+                      <div class="content">
+                         <p>
+                            We provide flexible Payment schedule. The project will be devided into several stages and the calculated payments will be defined for each stage.
+                            Client can make the payment for the stages by monitoring the progress.
+                         </p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/contact.png' %}" width="40" class="img-responsive" alt="faq image">
+                         Whom to contact during work?
+                      </h4>
+                      <div class="content">
+                         <p>
+                            A dedicated Project manager and Site engineer will be assigned to each project.
+                            Client can contact the Site engineer or project Manager for any queries.
+                         </p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/follow-up.png' %}" width="40" class="img-responsive" alt="faq image">
+                         Does the Client need to follow up the work regularly?
+                      </h4>
+                      <div class="content">
+                         <p>
+                            NO, Clients need not followup or worry about the work. Our team will be taking care of it.
+                            Client can enjoy our hassle-free process and service and he/she visit the project only when required.
+                         </p>
+                      </div>
+                   </div>
+                   <div class="set">
+                      <h4 class="bdr-rds">
+                         <img src="{% static 'img/icons/faq/work-progress.png' %}" width="40" class="img-responsive" alt="faq image">
+                         How does the Client monitor the progress of the project?
+                      </h4>
+                      <div class="content">
+                         <p>We will be sending the status updates through Email or Whatsapp group. Photos and Videos will be captured at site.</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+ <section class="clients-section" style="background: #fff; margin-top: 0px;">
+    <div class="container">
+       <div class="sponsors-outer">
+          <div class="sec-title text-center txt wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+             <h3 class="text-center">Trusted Brands</h3>
+          </div>
+          <ul class="sponsors-carousel owl-carousel owl-theme">
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/acc.jpg' %}" class="img-responsive" alt="cement"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/anchor.jpg' %}" class="img-responsive" alt="Anchor"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/ashirwad.png' %}" class="img-responsive" alt="Ashirwad"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/asianpaints.png' %}" class="img-responsive" alt="AsianPaints"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/astral.png' %}" class="img-responsive" alt="Astral"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/birla.jpg' %}" class="img-responsive" alt="Birla"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/birlawallcare.png' %}" class="img-responsive" alt="Birlawallcare"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/drfixit.png' %}" class="img-responsive" alt="Drfixit"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/finolex.jpg' %}" class="img-responsive" alt="Finolex"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/fosroc.jpg' %}" class="img-responsive" alt="Fosroc"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/ganga.png' %}" class="img-responsive" alt="Ganga"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/gm.png' %}" class="img-responsive" alt="GM"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/havells.png' %}" class="img-responsive" alt="Havells"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/hindware.png' %}" class="img-responsive" alt="Hindware"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/jaquar.png' %}" class="img-responsive" alt="Jaquar"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/jhonson.jpg' %}" class="img-responsive" alt="Jhonson"></a>
+                </figure>
+             </li>
+          </ul>
+          <br/>
+          <ul class="sponsors-carousel owl-carousel owl-theme">
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/jindal_steel.png' %}" class="img-responsive" alt="Jlndal"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/jkwall.png' %}" class="img-responsive" alt="JkWall"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/jswateel.jpg' %}" class="img-responsive" alt="JswAteel"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/kajaria.png' %}" class="img-responsive" alt="Kajaria"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/legrand.png' %}" class="img-responsive" alt="Legrand"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/maha.png' %}" class="img-responsive" alt="Maha"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/parryware.jpg' %}" class="img-responsive" alt="Parryware"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/polycab.png' %}" class="img-responsive" alt="Polycab"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/priya.png' %}" class="img-responsive" alt="Priya"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/sintex.png' %}" class="img-responsive" alt="Sintex"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/supreme.png' %}" class="img-responsive" alt="Supreme"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/tatatiscon.png' %}" class="img-responsive" alt="Tatatiscon"></a>
+                </figure>
+             </li>
+             <li class="slide-item">
+                <figure class="image-box">
+                   <a href="#">
+                   <img src="{% static 'images/cement-logos/ultratech.jpg' %}" class="img-responsive" alt="ultratech"></a>
+                </figure>
+             </li>
+          </ul>
+       </div>
+    </div>
+ </section>
+
+
+ <section class="services-section client-testimonial style-six" style="background: #f5f5f5 !important; padding-top: 50px; padding-bottom: 70px;">
+    <div class="container">
+       <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+          <h3 class="text-center">Testimonials</h3>
+       </div>
+       <div class="services-box row clearfix" style="margin-top: 50px">
+          <div class="services-carousel-two owl-carousel owl-theme">
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">
+                         “I've found Buildhood Infra tech Private Limited to be honest, reliable and professional in all aspects of my recent remodeling job. They are a friendly and hardworking bunch of guys. Would gladly hire them again for future projects."
+                      </div>
+                      <div class="link-box">
+                         <a href="#">- Chiranjeevi Raju</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">01</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">“I approached Buildhood for the interior work of my flat. They provided a very good service. I am very happy with the work done. They listen patiently about my requirements, suggested few designs, they made final design accordingly.”</div>
+                      <div class="link-box">
+                         <a href="#">- Rajesh Guntuku</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">02</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">“They are very good at their work, they will understand your requirements and provide good design and solutions for your home.”</div>
+                      <div class="link-box">
+                         <a href="#">- Tarun Thakur</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">03</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">“Honest, timely, trustworthy,very knowledgeable and friendly. I would definitely recommend this company to family and friends.”</div>
+                      <div class="link-box">
+                         <a href="#">- Anilraj kaddala</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">04</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">"I have to say that your response time is awesome, and your service is top notch. Your company is one of the best that actually delivers what u promise and the with best price. Thank you."</div>
+                      <div class="link-box">
+                         <a href="#">- Prasanth K</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">05</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">"Value for customers and time. I am happy with the service."</div>
+                      <div class="link-box">
+                         <a href="#">- Omkar kumar K</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">06</div>
+                </div>
+             </div>
+             <div class="service-block">
+                <div class="inner-box">
+                   <div class="lower-content">
+                      <div class="text">"Very impressive ..Love their work on time ,Dedication and Superb models."</div>
+                      <div class="link-box">
+                         <a href="#">- Kondaveeti Uva Kishore</a>
+                      </div>
+                   </div>
+                   <div class="number-slide">07</div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="js/jquery.js" type="a7d529662f03487d1bc85075-text/javascript"></script>
+ <script type="a7d529662f03487d1bc85075-text/javascript">
+    $(document).ready(function () {
+        $(".set > h4").on("click", function () {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this)
+                    .siblings(".content")
+                    .slideUp(200);
+                $(".set > h4 i")
+                    .removeClass("fa-minus")
+                    .addClass("fa-plus");
+            } else {
+                $(".set > h4 i")
+                    .removeClass("fa-minus")
+                    .addClass("fa-plus");
+                $(this)
+                    .find("i")
+                    .removeClass("fa-plus")
+                    .addClass("fa-minus");
+                $(".set > h4").removeClass("active");
+                $(this).addClass("active");
+                $(".content").slideUp(200);
+                $(this)
+                    .siblings(".content")
+                    .slideDown(200);
+            }
+        });
+    });
+    
+ </script>
+ <script type="a7d529662f03487d1bc85075-text/javascript">
+    $(document).ready(function () {
+        $(".why-choose-div").click(function () {
+    
+            alert(hi);
+            $(".sortby").toggle();
+            $(".sortby").removeClass('hide');
+    
+    
+        });
+    
+    });
+ </script>
+ <style>
+    .theme-background-color {
+    background-color: #1D8F03!important !important;
+    }
+    .fprIlH {
+    display: none !important;
+    }
+    @media (max-width: 767px) {
+    .fprIlH {
+    display: block !important;
+    }
+    }
+ </style>
+ <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="a7d529662f03487d1bc85075-text/javascript"></script>
+ <script type="a7d529662f03487d1bc85075-text/javascript">
+    $('#my-carousel').carousel({
+        interval: 3000,
+        cycle: true,
+        pause: "false"
+    })
+    
+ </script>
+ <script type="a7d529662f03487d1bc85075-text/javascript">
+    $('#my-carousel1').carousel({
+        interval: 4500,
+        cycle: true,
+        pause: "false"
+    })
+    
+ </script>
+
+ <div class="container-fluid tpftr">
+    <div class="row">
+       <div class="container tpftr1">
+          <div class="row">
+             <div class="col-md-7">
+                <div class="bfr-ftr-hire">
+                   <div class="hire">
+                      <h2>Hire our Trusted construction Service</h2>
+                   </div>
+                   <div class="row hire-icon">
+                      <div class="col-md-4">
+                         <div class="hire-sec">
+                            <span><i class="fa fa-home"></i></span>
+                            <p>Quality Homes</p>
+                         </div>
+                      </div>
+                      <div class="col-md-4">
+                         <div class="hire-sec">
+                            <span><i class="fa fa-eye"></i></span>
+                            <p>Transparent Service</p>
+                         </div>
+                      </div>
+                      <div class="col-md-4">
+                         <div class="hire-sec great" style="border-right: 0 !important">
+                            <span><i class="fa fa-inr"></i></span>
+                            <p>Great Value</p>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="row">
+                      <div class="col-md-12">
+                         <a class="purchased package-footer-btn btn-style-one" href="contact-us.html">Lets Build</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-5">
+                <img src="{% static 'img/bg.svg' %}" class="img-responsive" alt="Backgroung Image" />
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+{% endblock %}
