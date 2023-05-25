@@ -43,3 +43,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+    
+class Offerbaner(models.Model):
+    image=models.ImageField(upload_to='images/Offer Baner')
+    

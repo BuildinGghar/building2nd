@@ -30,3 +30,9 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'location')
     list_filter = ('location',)
     list_per_page = 20
+    
+
+@admin.register(Offerbaner)
+class OfferbanerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'image']
+    list_display_links = ['id', 'image']   

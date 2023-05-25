@@ -7,10 +7,12 @@ def index(request):
     baners=Baner.objects.all()
     mobile_baner=BanerMobile.objects.all()
     project=Project.objects.all()
+    offerimage=Offerbaner.objects.all()
     context={
         "baners":baners,
         "mobile_baner":mobile_baner,
         "project":project,
+        'offerimage':offerimage,
     }
     return render(request, 'index.html',context)
 
@@ -284,3 +286,4 @@ def calculator(request):
             result = "Invalid expression"
 
     return render(request, 'index.html', {'result': result})
+

@@ -2500,7 +2500,9 @@
  <div id="myModal" class="modal1">
    <div class="modal-content1">
      <span class="close-button" onclick="closeModal()">&times;</span>
-     <img class="modal-image1" src="{% static 'images/add.JPEG' %}" alt="Popup Image">
+     {% for i in offerimage %}
+     <img class="modal-image1" src="{{ i.image.url }}" alt="Popup Image">
+     {% endfor %}
    </div>
  </div>
  
