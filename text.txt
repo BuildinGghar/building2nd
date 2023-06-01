@@ -1,0 +1,5 @@
+http://127.0.0.1:8000/django-check-seo/?page=/index
+
+importent 
+
+https://www.youtube.com/playlist?list=PLXo6OWLjr5-uxR-sf8Yns2wV1ej0DDASU

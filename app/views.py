@@ -254,31 +254,55 @@ def contactus(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            
+
             name = form.cleaned_data.get('name')
             mobile = form.cleaned_data.get('mobile')
             email = form.cleaned_data.get('email')
             location = form.cleaned_data.get('location')
             message = form.cleaned_data.get('message')
-            
-            subject = 'Contact Form Submission'
-            message = f'Name: {name}\nMobile: {mobile}\nEmail: {email}\nLocation: {location}\nMessage: {message}'
-            from_email = settings.EMAIL_HOST_USER
-            to_email = ['contact@buildingghar.com']  # Set the recipient email address here
-            
-            send_mail(subject, message, from_email, to_email, fail_silently=False)
-            
-            # Send thank-you message to the user
-            user_subject = 'Thank You for Contacting Us'
-            user_message = f'Dear {name},\n\nThank you for reaching out to us. We appreciate your message and will get back to you shortly.\n\nBest Regards,\nBuildingGhar\nbuildingghar.com\nAddress. # 456, 4th Floor, 7th Cross, BTM Layout\nStage 2. Bengaluru - 560076 Landmark Opposite\nMarigold Hospital '
-            send_mail(user_subject, user_message, from_email, [email], fail_silently=False)
-            
+
+            # Do something with the form data
+            # For example, save it to a database or perform any other desired actions
+
             return render(request, 'success.html')  # Replace 'success.html' with your success page
         else:
             print(form.errors)  # Print form errors for debugging
     else:
         form = ContactForm()
     return render(request, 'contactus.html', {'form': form})
+
+# with mail
+
+# def contactus(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+            
+#             name = form.cleaned_data.get('name')
+#             mobile = form.cleaned_data.get('mobile')
+#             email = form.cleaned_data.get('email')
+#             location = form.cleaned_data.get('location')
+#             message = form.cleaned_data.get('message')
+            
+#             subject = 'Contact Form Submission'
+#             message = f'Name: {name}\nMobile: {mobile}\nEmail: {email}\nLocation: {location}\nMessage: {message}'
+#             from_email = settings.EMAIL_HOST_USER
+#             to_email = ['contact@buildingghar.com']  # Set the recipient email address here
+            
+#             send_mail(subject, message, from_email, to_email, fail_silently=False)
+            
+#             # Send thank-you message to the user
+#             user_subject = 'Thank You for Contacting Us'
+#             user_message = f'Dear {name},\n\nThank you for reaching out to us. We appreciate your message and will get back to you shortly.\n\nBest Regards,\nBuildingGhar\nbuildingghar.com\nAddress. # 456, 4th Floor, 7th Cross, BTM Layout\nStage 2. Bengaluru - 560076 Landmark Opposite\nMarigold Hospital '
+#             send_mail(user_subject, user_message, from_email, [email], fail_silently=False)
+            
+#             return render(request, 'success.html')  # Replace 'success.html' with your success page
+#         else:
+#             print(form.errors)  # Print form errors for debugging
+#     else:
+#         form = ContactForm()
+#     return render(request, 'contactus.html', {'form': form})
 
 
 

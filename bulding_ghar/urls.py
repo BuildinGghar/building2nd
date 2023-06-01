@@ -20,7 +20,9 @@ from django.conf.urls import handler404
 from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('app.urls'))
+    path("django-check-seo/", include("django_check_seo.urls")),
+    path('',include('app.urls')),
+    
 ]
 
 
