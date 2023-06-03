@@ -8,11 +8,13 @@ def index(request):
     mobile_baner=BanerMobile.objects.all()
     project=Project.objects.all()
     offerimage=Offerbaner.objects.all()
+    youtubeurl=Youtuble.objects.all()
     context={
         "baners":baners,
         "mobile_baner":mobile_baner,
         "project":project,
         'offerimage':offerimage,
+        'youtubeurl':youtubeurl,
     }
     return render(request, 'index.html',context)
 
@@ -42,27 +44,40 @@ def design_image(request, id):
 
 
 
-def architecture(request):
-    baners=Baner.objects.all()
-    mobile_baner=BanerMobile.objects.all()
-    project=Project.objects.all()
-    context={
-        "baners":baners,
-        "mobile_baner":mobile_baner,
-        "project":project,
-    }
-    return render (request, 'architecture.html',context)
+# def architecture(request):
+#     baners=Baner.objects.all()
+#     mobile_baner=BanerMobile.objects.all()
+#     project=Project.objects.all()
+#     context={
+#         "baners":baners,
+#         "mobile_baner":mobile_baner,
+#         "project":project,
+#     }
+#     return render (request, 'architecture.html',context)
 
-def construction(request):
-    baners=Baner.objects.all()
-    mobile_baner=BanerMobile.objects.all()
-    project=Project.objects.all()
-    context={
-        "baners":baners,
-        "mobile_baner":mobile_baner,
-        "project":project,
-    }
-    return render (request, 'construction.html',context)
+# def construction(request):
+#     baners=Baner.objects.all()
+#     mobile_baner=BanerMobile.objects.all()
+#     project=Project.objects.all()
+#     context={
+#         "baners":baners,
+#         "mobile_baner":mobile_baner,
+#         "project":project,
+#     }
+#     return render (request, 'construction.html',context)
+
+
+def house_villa(request):
+    return render(request, 'housevilla.html')
+
+def custom_project(request):
+    return render(request, 'custom_project.html')
+
+def renovation(request):
+    return render(request, 'renovation.html')
+
+def floor_addition(request):
+    return render(request, 'floor_addition.html')
 
 def packages(request):
     try:
@@ -271,6 +286,17 @@ def contactus(request):
         form = ContactForm()
     return render(request, 'contactus.html', {'form': form})
 
+
+def popup(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # Replace 'success' with your success URL name
+    else:
+        form = ContactForm()
+    return render(request, 'popup.html', {'form': form})
+
 # with mail
 
 # def contactus(request):
@@ -288,7 +314,7 @@ def contactus(request):
 #             subject = 'Contact Form Submission'
 #             message = f'Name: {name}\nMobile: {mobile}\nEmail: {email}\nLocation: {location}\nMessage: {message}'
 #             from_email = settings.EMAIL_HOST_USER
-#             to_email = ['contact@buildingghar.com']  # Set the recipient email address here
+#             to_email = ['krishna@buildingghar.com']  # Set the recipient email address here
             
 #             send_mail(subject, message, from_email, to_email, fail_silently=False)
             

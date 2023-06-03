@@ -330,7 +330,7 @@
                    <div class="tab-btns-box tab-center pull-center">
                       <div class="tabs-header marginb0">
                          <ul class="product-tab-btns clearfix">
-                            <li class="p-tab-btn mlb0 active-btn mlb0 bdrd p-tab-btn1" data-tab="#p-tab-1" style="margin-left: -4px !important;"><i class="fa fa-home"></i>&nbsp; Turn-key Construction Packages </li>
+                            <li class="p-tab-btn mlb0 active-btn mlb0 bdrd p-tab-btn1" data-tab="#p-tab-1" style="margin-left: -4px !important;"><i class="fa fa-home"></i>&nbsp;Constructions </li>
                             <li class="p-tab-btn mlb0" data-tab="#p-tab-2"><i class="fa fa-home"></i>&nbsp; Architecture Packages </li>
                          </ul>
                       </div>
@@ -1270,7 +1270,7 @@
                        color: #1D8F03;
                      }
                    </style>
-                   <h1>Estimation Calculator</h1>
+                   <h2>Estimation Calculator</h2>
 
 <label for="length">Length:</label>
 <input type="number" id="length" placeholder="Enter length" />
@@ -1889,6 +1889,63 @@
     </div>
  </div>
 
+ 
+
+
+
+
+
+ <section class="section p-none txt-justify" style="background: #fff;">
+   <div class="container">
+       <div class=" content-box content-box1">
+           <div class="row">
+               <div class="col-md-12">
+                   <div class="sec-title text-center" style="margin-top: 25px">
+                       <h2 class="text-center">Architecture </h2>
+                   </div>
+               </div>
+               <div class="col-md-6 bdrrht">
+                   <h3>Planning and Architecture Service</h3>
+                   <h4>“We design for the present with the understanding of the past and prediction of the future”</h4>
+                   <p>We are good listeners, we listen and jot down all your requirements. Our architects are professionals in carving designs by turning the concepts into images and plans. We create the overall look of the building and
+                       structure design far more than its appearance. Creativity is something a core area we focus on in the designing. </p>
+               </div>
+               <div class="col-md-6 p-none">
+                   <img src="{% static 'img/architectural_service1.jpg' %}" class="img-responsive" alt="Image" />
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+<section class="section p-none txt-justify" style="background: #fafafa;">
+   <div class="container">
+       <div class=" content-box content-box1">
+           <div class="row">
+               <div class="col-md-12">
+                   <div class="sec-title text-center" style="margin-top: 25px">
+                       <h2 class="text-center">Construction </h2>
+                   </div>
+               </div>
+               <div class="col-md-6 p-none bdrrht">
+                   <img src="{% static 'img/about-villa.png' %}" class="img-responsive" alt="Image" />
+               </div>
+               <div class="col-md-6">
+                   <h3>House/Villa Construction</h3>
+                   <h4>“A transparent and outstanding construction service with 5 years of warranty”</h4>
+                   <p>Building Ghar Infratech feels proud for completing 150+ projects in its journey. We are urged to provide modernized, quality, professional, and transparent service to everyone. Our experts are specialized in turning your
+                       dream house into reality. We carefully pick and finalize the best in everything. We are recognized for our world-class finishing that made even a simple house look stylish. </p>
+                   <p>
+                       Every house owner is valued at Building Ghar Infratech. We are satisfied and relaxed when our house owner’s expectations are met. Hence, we boldly offer service with 5 years of warranty.
+                   </p>
+                   <p>
+                       Through on-time completion of projects, we have earned the trust in the market. Our professional and friendly customer service made us stand out distinctively from the crowd.
+                   </p>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+
 
 
  <section class="padding bg_light services-section hidden-xs" style="padding: 50px 0px; /*background-color: #828282; *//*background-image: url('{% static "images/faqs.jpg" %}'); */ background-attachment: fixed">
@@ -2029,6 +2086,103 @@
        </div>
     </div>
  </section>
+
+ {% comment %} youtube video {% endcomment %}
+ <section class="padding bg_light services-section hidden-xs" style="padding: 50px 0px; /*background-color: #828282; *//*background-image: url('{% static "images/faqs.jpg" %}'); */ background-attachment: fixed">
+   <div class="container">
+      <div class="sec-title text-center wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+         <h3 class="text-center" style="color: #000">3D Walkthrough Tour Of On Going Projects</h3>
+      </div>
+   </div>
+
+ <style>
+   .video-container {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 20px; /* Adjust the value to increase or decrease the space between videos */
+   }
+
+   .video-wrapper {
+       position: relative;
+   }
+
+   .video-wrapper .arrow {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       font-size: 2rem;
+       color: #000;
+       background-color: #ff0000a1;
+       padding: 10px;
+       cursor: pointer;
+   }
+
+   .video-wrapper .arrow.left {
+       left: 10px;
+   }
+
+   .video-wrapper .arrow.right {
+       right: 10px;
+   }
+
+   @media screen and (max-width: 600px) {
+       .video-container {
+           flex-direction: column;
+       }
+   }
+
+   @media screen and (max-width: 1100px) {
+       .video-wrapper iframe {
+           width: 100%;
+           height: 100%;
+       }
+   }
+</style>
+
+<div class="video-container">
+   <div class="video-wrapper">
+       <div class="arrow left">&larr;</div>
+       <div class="arrow right">&rarr;</div>
+       {% for i in youtubeurl %}
+           <iframe width="1100" height="600" src="{{i.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       {% endfor %}
+   </div>
+</div>
+
+
+<script>
+   var currentIndex = 0;
+   var videos = document.querySelectorAll('iframe');
+   var leftArrow = document.querySelector('.arrow.left');
+   var rightArrow = document.querySelector('.arrow.right');
+
+   function showVideo(index) {
+       videos.forEach(function (video, i) {
+           if (i === index) {
+               video.style.display = 'block';
+           } else {
+               video.style.display = 'none';
+           }
+       });
+   }
+
+   leftArrow.addEventListener('click', function () {
+       currentIndex = (currentIndex === 0) ? (videos.length - 1) : (currentIndex - 1);
+       showVideo(currentIndex);
+   });
+
+   rightArrow.addEventListener('click', function () {
+       currentIndex = (currentIndex === videos.length - 1) ? 0 : (currentIndex + 1);
+       showVideo(currentIndex);
+   });
+
+   showVideo(currentIndex);
+</script>
+
+</section>
+ {% comment %} close youtube video {% endcomment %}
+ 
 
 
  <section class="clients-section" style="background: #fff; margin-top: 0px;">
@@ -2521,6 +2675,6 @@
 
  {% comment %} end popup {% endcomment %}
 
-
+ {% comment %} {% include 'popup.html' %} {% endcomment %}
 
 {% endblock %}

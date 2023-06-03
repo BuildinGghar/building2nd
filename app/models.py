@@ -49,3 +49,7 @@ class Contact(models.Model):
 class Offerbaner(models.Model):
     image=models.ImageField(upload_to='images/Offer Baner')
     
+    
+class Youtuble(models.Model):
+    url=models.TextField(max_length=2000)
+    

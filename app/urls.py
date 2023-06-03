@@ -8,8 +8,13 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('project_view/<int:id>/', views.project_view, name='project_view'),
     path('design_image/<int:id>/', views.design_image, name='design_image'),
-    path('architecture', views.architecture, name='architecture'),
-    path('construction', views.construction, name='construction'),
+    # path('architecture', views.architecture, name='architecture'),
+    # path('construction', views.construction, name='construction'),
+    path('house_villa', views.house_villa, name='house_villa'),
+    path('custom_project', views.custom_project, name='custom_project'),
+    path('renovation', views.renovation, name='renovation'),
+    path('floor_addition', views.floor_addition, name='floor_addition'),
+    
     path('packages', views.packages, name='packages'),
     path('structure', views.structure, name='structure'),
     path('kitchen', views.kitchen, name='kitchen'),
@@ -32,7 +37,11 @@ urlpatterns = [
     path('about',views.about, name='about'),
     path('career',views.career, name='career'),
     path('contactus',views.contactus, name='contactus'),
+    path('popup/', views.popup, name='popup'),
+
     path('calculator/',views.calculator, name='calculator'),
+    
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

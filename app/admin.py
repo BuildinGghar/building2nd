@@ -36,3 +36,5 @@ class ContactAdmin(admin.ModelAdmin):
 class OfferbanerAdmin(admin.ModelAdmin):
     list_display = ['id', 'image']
     list_display_links = ['id', 'image']   
+    
+admin.site.register(Youtuble)
