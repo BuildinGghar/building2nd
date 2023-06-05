@@ -5,7 +5,6 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-
 <style>
     h1, h2, h3, h4, h5, h6 {
         position: relative;
@@ -16,23 +15,36 @@
     }
 </style>
 
+
 <section class="section p-none txt-justify" style="background: #fff;">
     <div class="container">
         <div class=" content-box content-box1">
             <div class="row">
                 <div class="col-md-12">
                     <div class="sec-title text-center" style="margin-top: 25px">
-                        <h2 class="text-center">Architecture </h2>
+                        <h2 class="text-center">Renovation </h2>
                     </div>
                 </div>
                 <div class="col-md-6 bdrrht">
-                    <h3>Planning and Architecture Service</h3>
-                    <h4>“We design for the present with the understanding of the past and prediction of the future”</h4>
-                    <p>We are good listeners, we listen and jot down all your requirements. Our architects are professionals in carving designs by turning the concepts into images and plans. We create the overall look of the building and
-                        structure design far more than its appearance. Creativity is something a core area we focus on in the designing. </p>
+                    <h3>Revitalize Your Space with Building Ghar's Renovation Expertise</h3>
+                    
+                        <p>
+                            Building Ghar is your trusted partner for all your renovation needs. Whether you're looking to transform your home, office, or commercial space, our skilled team is here to bring new life to your surroundings.
+                        </p></br>
+                        <p>
+                            With years of experience and a passion for excellence, we specialize in delivering seamless renovation solutions that elevate your space to its full potential. Our dedicated professionals collaborate closely with you, understanding your vision and objectives, to create a customized plan that suits your unique requirements.
+                        </p></br>
+
+                        <p>
+                            At Building Ghar, we believe that a successful renovation project goes beyond just aesthetics. We focus on enhancing functionality, optimizing space utilization, and incorporating sustainable design principles to ensure a harmonious balance between style and practicality.
+
+                        </p></br>
+                        <p>
+                            Our renovation services cover a wide range of areas, including kitchens, bathrooms, living spaces, offices, retail spaces, and more. Whether you're seeking a modern, minimalist update or a timeless, traditional makeover, our team of experts brings creative design solutions and expert craftsmanship to every project.
+                        </p>
                 </div>
                 <div class="col-md-6 p-none">
-                    <img src="{% static 'img/architectural_service1.jpg' %}" class="img-responsive" alt="Image" />
+                    <img src="{% static 'img/services/pageimg/5.PNG' %}" class="img-responsive" alt="Image" />
                 </div>
             </div>
         </div>
@@ -43,29 +55,64 @@
         <div class=" content-box content-box1">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="sec-title text-center" style="margin-top: 25px">
+                    {% comment %} <div class="sec-title text-center" style="margin-top: 25px">
                         <h2 class="text-center">Construction </h2>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
                 <div class="col-md-6 p-none bdrrht">
-                    <img src="{% static 'img/about-villa.png' %}" class="img-responsive" alt="Image" />
+                    <img src="{% static 'img/services/pageimg/6.PNG' %}" class="img-responsive" alt="Image" />
                 </div>
                 <div class="col-md-6">
-                    <h3>House/Villa Construction</h3>
-                    <h4>“A transparent and outstanding construction service with 5 years of warranty”</h4>
-                    <p>Building Ghar Infratech feels proud for completing 150+ projects in its journey. We are urged to provide modernized, quality, professional, and transparent service to everyone. Our experts are specialized in turning your
-                        dream house into reality. We carefully pick and finalize the best in everything. We are recognized for our world-class finishing that made even a simple house look stylish. </p>
-                    <p>
-                        Every house owner is valued at Building Ghar Infratech. We are satisfied and relaxed when our house owner’s expectations are met. Hence, we boldly offer service with 5 years of warranty.
-                    </p>
-                    <p>
-                        Through on-time completion of projects, we have earned the trust in the market. Our professional and friendly customer service made us stand out distinctively from the crowd.
+                    <h3>Key Features of Building Ghar's Renovation Services:
+
+                    </h3>
+                    <ul class="bullet-list">
+                        <li>Comprehensive Consultation and Planning
+                        </li>
+                        <li>Creative Design Solutions
+                        </li>
+                        <li>Skilled Craftsmanship
+                        </li>
+                        <li>Quality Materials and Finishes
+                        </li>
+                        <li>Functional Space Optimization
+                        </li>
+                        <li>Sustainable Design Practices
+                        </li>
+                        <li>Transparent Communication and Collaboration
+                        </li>
+                        <li>Transparent Communication</li>
+                        <li>Timely Project Execution and Delivery
+                        </li>
+                        <li>Competitive Pricing
+                        </li>
+                        <li>Customer Satisfaction Guaranteed
+
+                        </li>
+                      </ul>
+                      
+                      <style>
+                        .bullet-list {
+                            list-style-type: none;
+                          }
+                          
+                          .bullet-list li::before {
+                            content: "•"; /* You can change this to any symbol you like */
+                            font-weight: bold;
+                            margin-right: 5px;
+                          }
+                          
+                      </style>
+                    </br><p>
+                        Experience the transformative power of a professionally executed renovation project. Contact Building Ghar today and let our experts revitalize your space, bringing your vision to life with precision and style.
                     </p>
                 </div>
+                
             </div>
         </div>
     </div>
  </section>
  
  
+
 {% endblock %}

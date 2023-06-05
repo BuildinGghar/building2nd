@@ -5,7 +5,6 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-
 <style>
     h1, h2, h3, h4, h5, h6 {
         position: relative;
@@ -15,23 +14,40 @@
         line-height: 1.2em;
     }
 </style>
+
+
 <section class="section p-none txt-justify" style="background: #fff;">
     <div class="container">
         <div class=" content-box content-box1">
             <div class="row">
                 <div class="col-md-12">
                     <div class="sec-title text-center" style="margin-top: 25px">
-                        <h2 class="text-center">Architecture </h2>
+                        <h2 class="text-center">Custom Project Construction </h2>
                     </div>
                 </div>
                 <div class="col-md-6 bdrrht">
-                    <h3>Planning and Architecture Service</h3>
-                    <h4>“We design for the present with the understanding of the past and prediction of the future”</h4>
-                    <p>We are good listeners, we listen and jot down all your requirements. Our architects are professionals in carving designs by turning the concepts into images and plans. We create the overall look of the building and
-                        structure design far more than its appearance. Creativity is something a core area we focus on in the designing. </p>
+                    <h3>Custom Project Construction:</h3>
+                    
+                        <p>
+                            Building Ghar is your trusted partner for turning your custom project aspirations into reality. We specialize in delivering tailored construction solutions that align perfectly with your unique vision and requirements.
+
+                        </p></br>
+                        <p>
+                            With our team of experienced professionals and industry experts, we bring unrivaled expertise to every custom project we undertake. From initial consultation to the final execution, our dedicated team collaborates closely with you, ensuring that your project is a reflection of your distinct style, functionality needs, and desired aesthetics.
+                        </p></br>
+
+                        <p>
+                            At Building Ghar, we understand that each custom project is one-of-a-kind. Whether you envision a custom-built home, a unique commercial space, or a specialized structure, we are committed to delivering exceptional results that exceed your expectations.
+
+                        </p></br>
+                        <p>
+                            Our approach to custom project construction is built on a foundation of innovation, craftsmanship, and attention to detail. We take the time to understand your specific requirements and translate them into a comprehensive plan, encompassing design, materials, budget, and timeline.
+
+
+                        </p>
                 </div>
                 <div class="col-md-6 p-none">
-                    <img src="{% static 'img/architectural_service1.jpg' %}" class="img-responsive" alt="Image" />
+                    <img src="{% static 'img/services/pageimg/3.PNG' %}" class="img-responsive" alt="Image" />
                 </div>
             </div>
         </div>
@@ -42,29 +58,61 @@
         <div class=" content-box content-box1">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="sec-title text-center" style="margin-top: 25px">
+                    {% comment %} <div class="sec-title text-center" style="margin-top: 25px">
                         <h2 class="text-center">Construction </h2>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
                 <div class="col-md-6 p-none bdrrht">
-                    <img src="{% static 'img/about-villa.png' %}" class="img-responsive" alt="Image" />
+                    <img src="{% static 'img/services/pageimg/4.PNG' %}" class="img-responsive" alt="Image" />
                 </div>
                 <div class="col-md-6">
-                    <h3>House/Villa Construction</h3>
-                    <h4>“A transparent and outstanding construction service with 5 years of warranty”</h4>
-                    <p>Building Ghar Infratech feels proud for completing 150+ projects in its journey. We are urged to provide modernized, quality, professional, and transparent service to everyone. Our experts are specialized in turning your
-                        dream house into reality. We carefully pick and finalize the best in everything. We are recognized for our world-class finishing that made even a simple house look stylish. </p>
-                    <p>
-                        Every house owner is valued at Building Ghar Infratech. We are satisfied and relaxed when our house owner’s expectations are met. Hence, we boldly offer service with 5 years of warranty.
-                    </p>
-                    <p>
-                        Through on-time completion of projects, we have earned the trust in the market. Our professional and friendly customer service made us stand out distinctively from the crowd.
+                    <h3>Key Features of Building Ghar's Custom Project Construction:
+
+                    </h3>
+                    <ul class="bullet-list">
+                        <li>Tailored Solutions for Unique Projects
+                        </li>
+                        <li>Comprehensive Project Planning and Design
+                        </li>
+                        <li>Skilled Team of Professionals and Experts
+                        </li>
+                        <li>Innovative Construction Techniques
+                        </li>
+                        <li>Top-Quality Materials and Finishes
+                        </li>
+                        <li>Transparent Communication and Collaboration
+                        </li>
+                        <li>Timely Project Execution and Delivery
+                        </li>
+                        <li>Competitive Pricing
+                        </li>
+                        <li>Uncompromising Focus on Customer Satisfaction</li>
+                        
+                      </ul>
+                      
+                      <style>
+                        .bullet-list {
+                            list-style-type: none;
+                          }
+                          
+                          .bullet-list li::before {
+                            content: "•"; /* You can change this to any symbol you like */
+                            font-weight: bold;
+                            margin-right: 5px;
+                          }
+                          
+                      </style>
+                    </br><p>
+                        Experience the difference of working with a construction company that is dedicated to bringing your custom project ideas to life. Contact Building Ghar today and embark on a construction journey that reflects your distinct personality and fulfils your aspirations.
+
                     </p>
                 </div>
+                
             </div>
         </div>
     </div>
  </section>
  
  
+
 {% endblock %}
