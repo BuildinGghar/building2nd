@@ -22,7 +22,7 @@ class ProjectAdmin(admin.ModelAdmin):
         DesignImageInline,
     ]
     
-admin.site.register(Package)
+# admin.site.register(Package)
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -38,3 +38,24 @@ class OfferbanerAdmin(admin.ModelAdmin):
     list_display_links = ['id', 'image']   
     
 admin.site.register(Youtuble)
+
+
+
+
+
+@admin.register(PackageName)
+class PackageNameAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)
+    search_fields = ('id','name',)
+
+@admin.register(PackageDetails)
+class PackageDetailsAdmin(admin.ModelAdmin):
+    list_display = ('id','name', 'package_detail')
+    list_filter = ('id','name',)
+    search_fields = ('id','name__name', 'package_detail')
+
+    def name(self, obj):
+        return obj.name.name
+
+admin.site.site_header = 'Your Admin Site'
+admin.site.site_title = 'Your Admin Site'

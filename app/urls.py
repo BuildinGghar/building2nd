@@ -40,6 +40,7 @@ urlpatterns = [
     path('popup/', views.popup, name='popup'),
 
     path('calculator/',views.calculator, name='calculator'),
+    path('package/<int:id>/', views.package_details_view, name='package_details'),
     
     
 ]
@@ -47,5 +48,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-
+# {% url 'package_details' id=1 %}
 

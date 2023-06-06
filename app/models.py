@@ -53,3 +53,14 @@ class Offerbaner(models.Model):
 class Youtuble(models.Model):
     url=models.TextField(max_length=2000)
     
+    
+class PackageName(models.Model):
+    name=models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+    
+class PackageDetails(models.Model):
+    name=models.ForeignKey(PackageName, on_delete=models.CASCADE)
+    package_detail=RichTextField()
+    def __str__(self):
+        return self.package_detail

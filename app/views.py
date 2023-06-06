@@ -9,12 +9,22 @@ def index(request):
     project=Project.objects.all()
     offerimage=Offerbaner.objects.all()
     youtubeurl=Youtuble.objects.all()
+    package_one=PackageName.objects.get(id=1)
+    package_two=PackageName.objects.get(id=2)
+    package_three=PackageName.objects.get(id=3)
+    package_four=PackageName.objects.get(id=4)
+    floor_addition=PackageName.objects.get(id=5)
     context={
         "baners":baners,
         "mobile_baner":mobile_baner,
         "project":project,
         'offerimage':offerimage,
         'youtubeurl':youtubeurl,
+        'package_one':package_one,
+        'package_two':package_two,
+        'package_three':package_three,
+        'package_four':package_four,
+        'floor_addition':floor_addition,
     }
     return render(request, 'index.html',context)
 
@@ -80,12 +90,19 @@ def floor_addition(request):
     return render(request, 'floor_addition.html')
 
 def packages(request):
-    try:
-        data = Package.objects.get(id=1)
-        context = {'data': data}
-    except Package.DoesNotExist:
-        context = {}
-    return render(request, 'turnkey-construction-packages.html',context)
+    package_one=PackageName.objects.get(id=1)
+    package_two=PackageName.objects.get(id=2)
+    package_three=PackageName.objects.get(id=3)
+    package_four=PackageName.objects.get(id=4)
+    floor_addition=PackageName.objects.get(id=5)
+    context={
+        'package_one':package_one,
+        'package_two':package_two,
+        'package_three':package_three,
+        'package_four':package_four,
+        'floor_addition':floor_addition,
+    }
+    return render(request, 'package.html',context)
 
 def structure(request):
     try:
@@ -361,7 +378,12 @@ def calculator(request):
 
     return render(request, 'index.html', {'result': result})
 
+from django.shortcuts import get_object_or_404, render
 
-
-
+def package_details_view(request, id):
+    package = get_object_or_404(PackageDetails, id=id)
+    context = {
+        'package': package
+    }
+    return render(request, 'package_view.html', context)
 
